@@ -13,10 +13,9 @@ It's a static page plus two Vercel serverless functions, with no dependencies an
 | Beacon | $1,000 off setup ($2,500 → $1,500) | $1,000 |
 | Pipeline Engine | Pay 6 months, month 7 free | $9,500 |
 | Full Bore | Pay 6 months, month 7 free | $16,500 |
-| FieldForge Crew | Pay 10 months, months 11–12 free | $50,000 |
 | Control Room | Standard pricing | — |
 
-Free months come at the **end** of the paid term. The deal ends **Mon Nov 30 2026, 11:59:59 PM Pacific**
+The free month comes at the **end** of the paid term, doesn't count toward the meeting guarantee or its free extension, and Full Bore ad spend is still paid by the client in that month. The deal ends **Mon Nov 30 2026, 11:59:59 PM Pacific**
 (`PROMO_ENDS_AT`). After that the page switches to standard pricing and minimum terms, and the server enforces it too.
 
 ## Deploy
@@ -29,7 +28,7 @@ Free months come at the **end** of the paid term. The deal ends **Mon Nov 30 202
 
 Create a Personal Access Token with `data.records:write` scoped to your base(s).
 Every plan goes to `AIRTABLE_BASE_ID` / `AIRTABLE_TABLE` unless it has its own
-`AIRTABLE_BASE_ID_<PLAN>` / `AIRTABLE_TABLE_<PLAN>` (`BEACON`, `PIPELINE`, `FULLBORE`, `CREW`, `CONTROLROOM`).
+`AIRTABLE_BASE_ID_<PLAN>` / `AIRTABLE_TABLE_<PLAN>` (`BEACON`, `PIPELINE`, `FULLBORE`, `CONTROLROOM`).
 
 Each target table needs these fields, **named exactly as shown**. Airtable rejects the whole record if one is missing:
 

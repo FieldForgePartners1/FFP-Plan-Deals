@@ -5,9 +5,6 @@ const after = new Date('2026-12-01T00:00:01-08:00');
 
 let q = quote('pipeline', { now: before });
 assert.deepStrictEqual([q.commitMonths, q.freeMonths, q.totalMonths, q.totalSavings, q.firstInvoice, q.commitTotal], [6, 1, 7, 9500, 9500, 57000]);
-q = quote('crew', { now: before });
-assert.deepStrictEqual([q.commitMonths, q.freeMonths, q.totalMonths, q.totalSavings, q.commitTotal], [10, 2, 12, 50000, 250000]);
-assert.strictEqual(q.promoLabel, 'Commit to 10 months, months 11 and 12 free');
 q = quote('fullbore', { now: before });
 assert.deepStrictEqual([q.commitMonths, q.freeMonths, q.totalSavings], [6, 1, 16500]);
 q = quote('beacon', { now: before });
@@ -21,4 +18,8 @@ assert.deepStrictEqual([q.promoApplied, q.freeMonths, q.commitMonths, q.totalSav
 q = quote('beacon', { now: after });
 assert.deepStrictEqual([q.setup, q.firstInvoice], [2500, 4000]);
 assert.strictEqual(quote('mach'), null);
+assert.strictEqual(quote('crew'), null);
+assert.match(quote('fullbore', { now: before }).promoFinePrint, /Ad spend is still paid/);
+assert.match(quote('pipeline', { now: before }).promoFinePrint, /doesn't count toward/);
+assert.strictEqual(quote('pipeline', { now: after }).promoFinePrint, null);
 console.log('pricing tests passed');

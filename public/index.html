@@ -135,7 +135,7 @@
   <div class="wrap">
     <div class="brand">FIELDFORGE <span>PARTNERS</span></div>
     <div class="eyebrow" id="eyebrow">Black Friday · Cyber Monday</div>
-    <h1 id="headline">Up to two months free. This week only.</h1>
+    <h1 id="headline">One month free, worth up to $16,500.</h1>
     <p id="lede">Black Friday and Cyber Monday pricing on FieldForge plans. Pick a plan, see exactly what's in it, and tell us where to send the agreement. It takes two minutes.</p>
     <div class="countdown" id="countdown" aria-live="polite"></div>
     <div class="deals" id="deals"></div>
@@ -262,6 +262,7 @@
         <details><summary>What's included</summary>
           <ul class="inc">${(p.includes || []).map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
           ${p.note ? `<p class="pnote">${esc(p.note)}</p>` : ''}
+          ${p.incentive && p.incentive.fine ? `<p class="pnote"><strong>Deal terms:</strong> ${esc(p.incentive.fine)}</p>` : ''}
         </details>
       </label>`;
     }).join('');
@@ -291,7 +292,7 @@
     }
     rows += li('First invoice', usd(q.firstInvoice), 'total');
     const term = q.freeMonths
-      ? `${q.totalMonths} months of service for the price of ${q.commitMonths}. Free months come at the end of the paid term.`
+      ? `${q.totalMonths} months of service for the price of ${q.commitMonths}. The free month comes at the end of the paid term. ${p.incentive && p.incentive.fine ? p.incentive.fine : ''}`
       : `${q.commitMonths}-month minimum, then month-to-month.`;
     const inc = p.incentive ? `<div class="incent"><b>${esc(p.incentive.headline)}</b><span>${esc(p.incentive.detail)}</span></div>` : '';
     $('#summary').innerHTML = `<h3>${esc(p.name)}</h3><p class="muted">${esc(p.tagline)}</p>${inc}<ul class="lines">${rows}</ul>
