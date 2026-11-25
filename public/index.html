@@ -4,128 +4,221 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FieldForge Partners · Black Friday Plans</title>
-<meta name="description" content="FieldForge Partners Black Friday and Cyber Monday pricing: up to 3 months free. Ends Monday, Nov 30 at 11:59 PM PT.">
+<meta name="description" content="Black Friday and Cyber Monday at FieldForge Partners: up to 3 months free. Ends Monday, Nov 30 at 11:59 PM PT.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
-<meta property="og:title" content="FieldForge Partners · Black Friday Plans">
+<meta property="og:title" content="Black Friday × Cyber Monday · FieldForge Partners">
 <meta property="og:description" content="Up to 3 months free on FieldForge plans. Ends Monday, Nov 30 at 11:59 PM PT.">
 <meta property="og:image" content="https://deals.fieldforgepartners.com/brand/logo-on-light.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  /* FieldForge brand: Deep Charcoal, Vibrant Green (action), Muted Purple (selective),
-     Crisp White, Structural Gray. Montserrat / Inter / Space Mono. Square corners. */
+  /* FieldForge brand: Deep Charcoal, Vibrant Green (action), Muted Purple (accent),
+     Crisp White, Structural Gray. Montserrat / Inter / Space Mono. */
   :root {
-    --charcoal: #1C2526; --charcoal-2: #263133; --charcoal-line: #344143;
-    --green: #4CC38A; --green-dark: #2E9E68; --green-tint: #E8F7EF;
-    --purple: #7C3AED;
-    --white: #FAFBFC; --gray: #F1F3F5; --line: #DDE2E6;
+    --charcoal: #1C2526; --night: #111819; --charcoal-2: #243032; --charcoal-line: #33403F;
+    --green: #4CC38A; --green-deep: #0F6E45; --green-dark: #23935D; --green-tint: #E9F8F0;
+    --purple: #7C3AED; --purple-soft: #A47CF3; --purple-deep: #4A0E78; --purple-tint: #F1EAFE;
+    --white: #FAFBFC; --gray: #F1F3F5; --line: #E1E5EA;
     --ink: #1C2526; --muted: #566164; --on-dark: #FAFBFC; --on-dark-muted: #A9B4B6;
     --err: #C2362B;
+    --g-green: linear-gradient(135deg, #5FD39A 0%, #2E9E68 55%, #0F6E45 100%);
+    --g-purple: linear-gradient(135deg, #A47CF3 0%, #7C3AED 50%, #4A0E78 100%);
+    --g-brand: linear-gradient(90deg, #4CC38A 0%, #7C3AED 100%);
+    --r: 10px; --r-lg: 14px;
     --h: 'Montserrat', system-ui, sans-serif;
     --b: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --m: 'Space Mono', ui-monospace, monospace;
+    --shadow: 0 1px 2px rgba(17,24,25,.05), 0 8px 24px -12px rgba(17,24,25,.18);
   }
-  * { box-sizing: border-box; border-radius: 0; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   html, body { margin: 0; }
   body { background: var(--white); color: var(--ink); font: 16px/1.55 var(--b); -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
   .label { font: 700 12px/1.3 var(--m); letter-spacing: .08em; text-transform: uppercase; }
-  h1, h2, h3 { font-family: var(--h); letter-spacing: -.01em; margin: 0; }
+  h1, h2, h3 { font-family: var(--h); margin: 0; }
+  svg.i { width: 20px; height: 20px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .grad-text { background: var(--g-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .t-green { color: var(--green); } .t-purple { color: #9B6BF2; }
 
-  /* Header + hero */
-  .top { background: var(--charcoal); color: var(--on-dark); }
-  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--charcoal-line); }
-  .bar img { height: 34px; width: auto; display: block; }
-  .bar .label { color: var(--on-dark-muted); }
-  @media (max-width: 560px) { .bar .label { display: none; } .bar img { height: 28px; } }
-  .hero { padding: 48px 0 44px; }
-  .hero .label.eyebrow { color: var(--green); }
-  .hero h1 { font-size: clamp(34px, 5.4vw, 58px); line-height: 1.04; font-weight: 800; margin: 14px 0 14px; max-width: 820px; }
-  .hero p.sub { color: var(--on-dark-muted); font-size: 18px; max-width: 640px; margin: 0 0 28px; }
-  .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 24px; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; cursor: pointer; font: 700 16px/1 var(--h); padding: 17px 26px; text-decoration: none; transition: background .15s; }
-  .btn-green { background: var(--green); color: var(--charcoal); }
-  .btn-green:hover { background: #5FD39A; }
-  .btn-green:disabled { opacity: .6; cursor: progress; }
-  .btn:focus-visible { outline: 3px solid var(--purple); outline-offset: 2px; }
-  .countdown { font: 400 14px/1.4 var(--m); color: var(--on-dark-muted); }
-  .countdown b { color: var(--on-dark); font-weight: 700; font-variant-numeric: tabular-nums; }
-  .deals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--charcoal-line); border: 1px solid var(--charcoal-line); margin-top: 40px; }
-  @media (max-width: 760px) { .deals { grid-template-columns: 1fr; } }
-  .deal-pick { display: flex; flex-direction: column; justify-content: flex-start; text-align: left; background: var(--charcoal-2); color: var(--on-dark); border: 0; padding: 18px 20px; cursor: pointer; font: inherit; transition: background .15s; }
-  .deal-pick:hover, .deal-pick:focus-visible { background: #2D393B; outline: none; }
-  .deal-pick .label { color: var(--on-dark-muted); }
-  .deal-pick .dh { font: 700 19px/1.25 var(--h); margin: 6px 0 4px; }
-  .deal-pick .dv { color: var(--green); font-weight: 600; font-size: 14px; }
+  /* Announcement bar */
+  .ribbon { background: var(--g-brand); color: #fff; font: 700 13px/1.2 var(--m); letter-spacing: .06em; text-transform: uppercase; }
+  .ribbon .wrap { display: flex; align-items: center; justify-content: center; gap: 10px; padding-top: 10px; padding-bottom: 10px; text-align: center; flex-wrap: wrap; }
+  .ribbon svg.i { width: 16px; height: 16px; }
+  .ribbon .sep { opacity: .6; }
+  @media (max-width: 560px) { .ribbon .hide-sm { display: none; } }
 
-  /* Sections */
-  main { padding: 44px 0 72px; }
-  .step-h { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
-  .step-n { font: 700 13px/1 var(--m); color: var(--purple); }
-  .step-h h2 { font-size: 26px; font-weight: 800; }
-  .lead { color: var(--muted); margin: 0 0 22px; }
+  /* Hero */
+  .top { position: relative; overflow: hidden; color: var(--on-dark); background:
+      radial-gradient(600px 400px at 85% 10%, rgba(124,58,237,.28), transparent 70%),
+      radial-gradient(500px 360px at 0% 100%, rgba(76,195,138,.16), transparent 70%),
+      var(--night); }
+  .top::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(115deg, transparent 52%, rgba(255,255,255,.035) 52%, rgba(255,255,255,.035) 74%, transparent 74%),
+                linear-gradient(115deg, transparent 70%, rgba(255,255,255,.05) 70%); }
+  .top::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .35;
+    background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 56px 56px; mask-image: linear-gradient(180deg, #000 0%, transparent 85%); -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%); }
+  .top > .wrap { position: relative; z-index: 1; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; }
+  .bar img { height: 36px; width: auto; display: block; }
+  .bar a.btn { padding: 12px 18px; font-size: 14px; }
+  @media (max-width: 560px) { .bar img { height: 28px; } .bar a.btn { display: none; } }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px; align-items: center; padding: 40px 0 72px; }
+  @media (max-width: 960px) { .hero { grid-template-columns: 1fr; gap: 56px; padding-bottom: 56px; } }
+  .pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(76,195,138,.45); background: rgba(76,195,138,.1); color: var(--green); border-radius: 999px; padding: 7px 14px; }
+  .pill svg.i { width: 16px; height: 16px; }
+  .hero h1 { font-weight: 900; text-transform: uppercase; letter-spacing: -.015em; line-height: .98; font-size: clamp(34px, 9vw, 60px); margin: 20px 0 6px; }
+  .hero h1 span { white-space: nowrap; }
+  .hero h1 span { display: block; }
+  .hero h1 .x { font-size: .4em; letter-spacing: .02em; color: var(--green); margin: 2px 0 4px; font-weight: 700; line-height: 1.2; }
+  .hero .deal-h { font: 800 clamp(22px, 2.6vw, 30px)/1.2 var(--h); margin: 18px 0 12px; }
+  .hero p.sub { color: var(--on-dark-muted); font-size: 17px; max-width: 560px; margin: 0 0 26px; }
+  .cd { display: flex; gap: 10px; margin: 0 0 28px; flex-wrap: wrap; align-items: stretch; }
+  .cd .u { min-width: 74px; text-align: center; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r); padding: 10px 8px 8px; backdrop-filter: blur(4px); }
+  .cd .u b { display: block; font: 800 30px/1 var(--h); font-variant-numeric: tabular-nums; }
+  .cd .u small { font: 400 11px/1.6 var(--m); letter-spacing: .08em; text-transform: uppercase; color: var(--on-dark-muted); }
+  .cd .end { display: flex; flex-direction: column; justify-content: center; padding-left: 6px; font: 400 13px/1.5 var(--m); color: var(--on-dark-muted); }
+  .cd .end b { color: var(--on-dark); }
+  .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 
-  /* Plan cards: equal height, content pinned top to bottom */
-  .plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: stretch; }
-  @media (max-width: 1000px) { .plans { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .plans { grid-template-columns: 1fr; } }
-  .plan { position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--line); padding: 20px 18px 18px; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
-  .plan:hover { border-top-color: var(--green); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 0; border-radius: var(--r); cursor: pointer; font: 700 15px/1 var(--h); letter-spacing: .02em; text-transform: uppercase; padding: 17px 24px; text-decoration: none; transition: transform .15s, box-shadow .15s, filter .15s; }
+  .btn svg.i { width: 18px; height: 18px; }
+  .btn-green { background: var(--g-green); color: #fff; box-shadow: 0 10px 24px -12px rgba(46,158,104,.8); }
+  .btn-purple { background: var(--g-purple); color: #fff; box-shadow: 0 10px 24px -12px rgba(124,58,237,.8); }
+  .btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.7); }
+  .btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+  .btn:disabled { opacity: .6; cursor: progress; transform: none; }
+  .btn:focus-visible { outline: 3px solid var(--purple-soft); outline-offset: 3px; }
+
+  /* Hero deal card with rotating badge */
+  .dealcard { position: relative; background: #fff; color: var(--ink); border-radius: var(--r-lg); padding: 30px 28px 26px 130px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); overflow: visible; }
+  .dealcard::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    background: radial-gradient(420px 260px at 100% 0%, rgba(164,124,243,.35), transparent 70%),
+      linear-gradient(rgba(124,58,237,.06) 1px, transparent 1px) 0 0/40px 40px, linear-gradient(90deg, rgba(124,58,237,.06) 1px, transparent 1px) 0 0/40px 40px;
+    -webkit-mask-image: linear-gradient(200deg, #000 0%, transparent 60%); mask-image: linear-gradient(200deg, #000 0%, transparent 60%); }
+  .dealcard::after { content: ""; position: absolute; left: 56px; right: 0; bottom: -10px; height: 10px; background: var(--g-green); border-radius: 0 0 var(--r) var(--r); }
+  .dealcard > * { position: relative; }
+  .dealcard #dealRows, .dealcard .note { margin-left: -102px; }
+  .seal { position: absolute; top: -62px; left: -26px; width: 132px; height: 132px; border-radius: 50%; background: var(--night); box-shadow: 0 0 0 6px var(--night), 0 12px 30px -10px rgba(0,0,0,.6); display: grid; place-items: center; z-index: 2; }
+  .seal svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 22s linear infinite; }
+  .seal svg.ring text { font: 700 11px var(--m); fill: var(--green); text-transform: uppercase; }
+  .seal .core { width: 74px; height: 74px; border-radius: 50%; border: 2px solid #fff; display: grid; place-items: center; text-align: center; color: #fff; line-height: 1; }
+  .seal .core b { display: block; font: 900 26px/1 var(--h); }
+  .seal .core small { font: 700 9px/1.2 var(--m); letter-spacing: .06em; text-transform: uppercase; color: var(--on-dark-muted); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .seal svg.ring { animation: none; } html { scroll-behavior: auto; } }
+  @media (max-width: 560px) { .seal { left: 50%; margin-left: -66px; } .dealcard { padding: 86px 20px 22px; } .dealcard #dealRows, .dealcard .note { margin-left: 0; } }
+  .dealcard .label { color: var(--green-dark); }
+  .dealcard h3 { font-size: 22px; font-weight: 800; margin: 6px 0 16px; }
+  .deal-row { display: flex; gap: 14px; align-items: center; width: 100%; text-align: left; font: inherit; color: inherit; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 13px 14px; margin-bottom: 10px; cursor: pointer; transition: border-color .15s, box-shadow .15s, transform .15s; }
+  .deal-row:hover, .deal-row:focus-visible { border-color: var(--purple-soft); box-shadow: 0 8px 20px -12px rgba(124,58,237,.6); transform: translateX(2px); outline: none; }
+  .deal-row .ic { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; background: var(--purple-tint); color: var(--purple); flex: none; }
+  .deal-row .tx { flex: 1; min-width: 0; }
+  .deal-row .tx small { display: block; font: 700 11px/1.3 var(--m); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .deal-row .tx b { display: block; font: 700 16px/1.3 var(--h); }
+  .deal-row .val { font: 700 13px/1.2 var(--m); color: var(--green-dark); text-align: right; white-space: nowrap; }
+  .deal-row .val svg.i { width: 16px; height: 16px; vertical-align: -3px; }
+  .dealcard .note { font-size: 13px; color: var(--muted); margin: 14px 0 0; display: flex; gap: 8px; align-items: flex-start; }
+  .dealcard .note svg.i { color: var(--green-dark); width: 18px; height: 18px; margin-top: 1px; }
+
+  /* Trust strip */
+  .trust { background: var(--charcoal); color: var(--on-dark); border-top: 1px solid var(--charcoal-line); }
+  .trust .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-top: 20px; padding-bottom: 20px; }
+  @media (max-width: 860px) { .trust .wrap { grid-template-columns: repeat(2, 1fr); } }
+  .trust div { display: flex; gap: 10px; align-items: center; font-size: 14px; color: var(--on-dark-muted); }
+  .trust div b { color: var(--on-dark); font-weight: 600; display: block; }
+  .trust svg.i { color: var(--green); width: 22px; height: 22px; }
+
+  /* Section headings */
+  main { padding: 64px 0 80px; }
+  .sec-h { text-align: center; max-width: 760px; margin: 0 auto 32px; }
+  .sec-h .kicker { font: 700 15px/1.4 var(--h); color: var(--green-dark); }
+  .sec-h h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 900; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.05; margin: 8px 0 10px; }
+  .sec-h p { color: var(--muted); margin: 0; }
+
+  /* Plan cards */
+  .plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
+  @media (max-width: 1040px) { .plans { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .plans { grid-template-columns: 1fr; } }
+  .plan { position: relative; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); cursor: pointer; box-shadow: var(--shadow); transition: transform .18s, box-shadow .18s, border-color .18s; overflow: hidden; }
+  .plan:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(17,24,25,.06), 0 18px 36px -16px rgba(17,24,25,.28); }
   .plan input { position: absolute; opacity: 0; pointer-events: none; }
-  .plan.selected { border-color: var(--charcoal); border-top-color: var(--green); box-shadow: 0 0 0 1px var(--charcoal); }
-  .plan:has(input:focus-visible) { outline: 3px solid var(--purple); outline-offset: 2px; }
-  .plan .badge { position: absolute; top: -4px; right: -1px; background: var(--purple); color: #fff; padding: 5px 8px; font: 700 10.5px/1 var(--m); letter-spacing: .06em; text-transform: uppercase; }
-  .plan .name { font: 800 19px/1.2 var(--h); }
+  .plan:has(input:focus-visible) { outline: 3px solid var(--purple-soft); outline-offset: 3px; }
+  .plan .ph { display: flex; justify-content: space-between; align-items: center; gap: 8px; height: 44px; background: var(--night); color: #fff; padding: 0 16px; white-space: nowrap; }
+  .plan .ph .label { font-size: 11.5px; }
+  .plan .ph .badge { background: var(--g-purple); border-radius: 999px; padding: 4px 9px; font: 700 10px/1 var(--m); letter-spacing: .06em; text-transform: uppercase; }
+  .plan .pb { position: relative; display: flex; flex-direction: column; flex: 1; padding: 20px 18px 18px; }
+  .plan .pb::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(260px 180px at 100% 0%, rgba(164,124,243,.22), transparent 70%),
+      linear-gradient(rgba(124,58,237,.05) 1px, transparent 1px) 0 0/32px 32px, linear-gradient(90deg, rgba(124,58,237,.05) 1px, transparent 1px) 0 0/32px 32px;
+    -webkit-mask-image: linear-gradient(210deg, #000 0%, transparent 55%); mask-image: linear-gradient(210deg, #000 0%, transparent 55%); }
+  .plan .pb > * { position: relative; }
+  .plan .pi { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; color: var(--purple); background: #fff; border: 1px solid var(--line); margin-bottom: 14px; }
+  .plan .pi svg.i { width: 24px; height: 24px; }
+  .plan .name { font: 800 20px/1.2 var(--h); }
   .plan .tag { color: var(--muted); font-size: 13px; margin-top: 2px; }
   .plan .price { font: 800 30px/1 var(--h); margin-top: 16px; }
   .plan .price small { font: 500 14px var(--b); color: var(--muted); }
   .plan .setup { font-size: 13px; color: var(--muted); margin-top: 6px; }
-  .plan .deal { margin-top: 14px; background: var(--green-tint); border-left: 3px solid var(--green); padding: 11px 12px; min-height: 66px; }
+  .plan .deal { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; background: var(--green-tint); border-radius: var(--r); padding: 11px 12px; min-height: 68px; }
+  .plan .deal svg.i { color: var(--green-dark); margin-top: 1px; }
   .plan .deal b { display: block; font: 700 15px/1.3 var(--h); }
-  .plan .deal span { display: block; font: 400 12px/1.4 var(--m); color: var(--muted); margin-top: 4px; }
-  .plan .deal.none { background: var(--gray); border-left-color: var(--line); }
+  .plan .deal span { display: block; font: 400 12px/1.4 var(--m); color: var(--muted); margin-top: 3px; }
+  .plan .deal.none { background: var(--gray); }
+  .plan .deal.none svg.i { color: var(--muted); }
   .plan .summary { font-size: 13.5px; color: var(--muted); margin: 14px 0 0; flex: 1; }
   .plan .foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid var(--line); margin-top: 16px; padding-top: 12px; font-size: 13px; }
-  .plan .guar { color: var(--ink); font-weight: 600; }
-  .plan .guar::before { content: "✓ "; color: var(--green-dark); }
-  .plan .pick { font: 700 11px/1 var(--m); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .plan .guar { display: flex; gap: 6px; align-items: flex-start; font-weight: 600; }
+  .plan .guar svg.i { width: 16px; height: 16px; color: var(--green-dark); margin-top: 1px; }
+  .plan .pick { display: inline-flex; align-items: center; gap: 4px; font: 700 11px/1 var(--m); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .plan .pick svg.i { width: 14px; height: 14px; }
+  .plan.selected { border-color: var(--green); box-shadow: 0 0 0 2px var(--green), 0 18px 36px -16px rgba(46,158,104,.45); }
   .plan.selected .pick { color: var(--green-dark); }
+  .plan.selected::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--g-green); }
 
-  /* Detail panel for the selected plan */
-  .detail { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); background: #fff; border: 1px solid var(--line); margin-top: 14px; }
-  @media (max-width: 860px) { .detail { grid-template-columns: 1fr; } }
-  .detail > div { padding: 24px; }
+  /* Detail panel */
+  .detail { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow); margin-top: 18px; overflow: hidden; }
+  @media (max-width: 880px) { .detail { grid-template-columns: 1fr; } }
+  .detail > div { padding: 26px; }
   .detail .inc-col { border-right: 1px solid var(--line); }
-  @media (max-width: 860px) { .detail .inc-col { border-right: 0; border-bottom: 1px solid var(--line); } }
-  .detail h3 { font-size: 18px; font-weight: 800; margin: 6px 0 14px; }
-  .detail .label { color: var(--muted); }
-  ul.inc { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 28px; font-size: 14px; }
+  @media (max-width: 880px) { .detail .inc-col { border-right: 0; border-bottom: 1px solid var(--line); } }
+  .detail .side { background: linear-gradient(180deg, var(--white), #fff); }
+  .detail .label { color: var(--green-dark); }
+  .detail h3 { font-size: 20px; font-weight: 800; margin: 6px 0 16px; }
+  ul.inc { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 28px; font-size: 14.5px; }
   @media (max-width: 640px) { ul.inc { columns: 1; } }
   ul.inc li { break-inside: avoid; padding: 5px 0 5px 22px; position: relative; }
-  ul.inc li::before { content: ""; position: absolute; left: 0; top: 12px; width: 10px; height: 10px; background: var(--green); }
-  .pnote { font-size: 13px; color: var(--muted); margin: 14px 0 0; }
-  .terms { display: grid; gap: 8px; margin: 6px 0 16px; }
-  .term { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px solid var(--line); padding: 12px 14px; cursor: pointer; background: var(--white); }
+  ul.inc li::before { content: ""; position: absolute; left: 2px; top: 12px; width: 8px; height: 8px; border-radius: 2px; background: var(--purple); }
+  .pnote { display: flex; gap: 10px; font-size: 13px; color: var(--muted); margin: 18px 0 0; background: var(--gray); border-radius: var(--r); padding: 12px 14px; }
+  .pnote svg.i { color: var(--green-dark); }
+  .terms { display: grid; gap: 8px; margin: 8px 0 16px; }
+  .term { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; cursor: pointer; background: #fff; transition: border-color .15s, box-shadow .15s; }
   .term input { accent-color: var(--green-dark); width: 18px; height: 18px; margin: 0 10px 0 0; flex: none; }
   .term .tl { display: flex; align-items: center; font: 700 15px var(--h); }
   .term .tv { font: 700 13px var(--m); color: var(--green-dark); white-space: nowrap; }
-  .term:has(input:checked) { border-color: var(--charcoal); box-shadow: inset 4px 0 0 var(--green); }
-  .facts { list-style: none; padding: 0; margin: 0 0 18px; font-size: 14px; }
-  .facts li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--gray); }
+  .term:has(input:checked) { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); background: var(--green-tint); }
+  .dealbig { display: flex; gap: 12px; align-items: center; background: var(--green-tint); border-radius: var(--r); padding: 14px; margin: 8px 0 16px; }
+  .dealbig .ic { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: var(--g-green); color: #fff; flex: none; }
+  .dealbig b { font: 800 17px/1.25 var(--h); }
+  .facts { list-style: none; padding: 0; margin: 0 0 16px; font-size: 14px; }
+  .facts li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
   .facts li span:last-child { font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
   .facts li.save span:last-child { color: var(--green-dark); }
   .fine { font-size: 12.5px; color: var(--muted); margin: 0 0 18px; }
   .detail .btn { width: 100%; }
 
   /* Form + summary */
-  #step2 { margin-top: 56px; scroll-margin-top: 16px; }
-  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; align-items: start; }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-  .card { background: #fff; border: 1px solid var(--line); padding: 26px; }
-  fieldset { border: 0; padding: 0; margin: 0 0 22px; }
-  legend { padding: 0; margin-bottom: 12px; }
+  #step2 { margin-top: 80px; scroll-margin-top: 16px; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 350px; gap: 24px; align-items: start; }
+  @media (max-width: 920px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow); padding: 28px; }
+  fieldset { border: 0; padding: 0; margin: 0 0 24px; }
+  legend { display: flex; align-items: center; gap: 10px; padding: 0; margin-bottom: 14px; font: 800 17px var(--h); }
+  legend .ic { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: var(--purple-tint); color: var(--purple); }
+  legend .ic svg.i { width: 18px; height: 18px; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .row.three { grid-template-columns: 2fr 1fr 1fr; }
   @media (max-width: 560px) { .row, .row.three { grid-template-columns: 1fr; } }
@@ -133,10 +226,10 @@
   label.f > span { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
   label.f > span em { color: var(--muted); font-weight: 400; font-style: normal; }
   input[type=text], input[type=email], input[type=tel], select, textarea {
-    width: 100%; font: inherit; color: var(--ink); background: var(--white); border: 1px solid var(--line); padding: 12px; transition: border-color .15s, box-shadow .15s;
+    width: 100%; font: inherit; color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 12px 13px; transition: border-color .15s, box-shadow .15s;
   }
   textarea { min-height: 84px; resize: vertical; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--charcoal); box-shadow: inset 0 -2px 0 var(--green); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(76,195,138,.2); background: #fff; }
   .invalid input, .invalid select { border-color: var(--err); }
   .ferr { color: var(--err); font-size: 12px; margin-top: 4px; display: none; }
   .invalid .ferr { display: block; }
@@ -144,61 +237,131 @@
   .agree input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--green-dark); flex: none; }
   .agree.invalid span { color: var(--err); }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  #submit { width: 100%; }
+  #submit { width: 100%; padding: 19px; font-size: 16px; }
   .formerr { color: var(--err); font-size: 14px; margin-top: 12px; }
-  aside.card { position: sticky; top: 16px; border-top: 4px solid var(--green); }
-  aside h3 { font-size: 20px; font-weight: 800; }
+  aside.card { position: sticky; top: 16px; padding: 0; overflow: hidden; }
+  aside .ah { background: var(--night); color: #fff; padding: 14px 22px; display: flex; justify-content: space-between; align-items: center; }
+  aside .ah .label { color: var(--green); }
+  aside .ab { padding: 22px; }
+  aside h3 { font-size: 22px; font-weight: 800; }
   aside .tag { color: var(--muted); font-size: 14px; margin: 2px 0 14px; }
-  aside .deal-line { background: var(--green-tint); padding: 11px 12px; margin-bottom: 12px; font: 700 15px/1.3 var(--h); }
+  aside .deal-line { display: flex; gap: 10px; align-items: center; background: var(--g-green); color: #fff; border-radius: var(--r); padding: 12px 14px; margin-bottom: 12px; font: 800 15px/1.3 var(--h); }
   .facts li.total { border-bottom: 0; padding-top: 12px; font-size: 16px; }
-  .facts li.total span:last-child { font: 800 18px var(--h); }
+  .facts li.total span:last-child { font: 800 20px var(--h); }
+  .secure { display: flex; gap: 8px; align-items: center; font-size: 12.5px; color: var(--muted); margin-top: 12px; justify-content: center; }
+  .secure svg.i { width: 16px; height: 16px; color: var(--green-dark); }
 
-  .done { text-align: center; padding: 56px 24px; border-top: 4px solid var(--green); }
-  .done .tick { width: 56px; height: 56px; background: var(--green); color: var(--charcoal); font: 800 28px/56px var(--h); margin: 0 auto 16px; }
-  .done h2 { font-size: 28px; }
-  .done p { color: var(--muted); max-width: 480px; margin: 10px auto 0; }
+  .done { text-align: center; padding: 64px 24px; }
+  .done .tick { width: 72px; height: 72px; border-radius: 50%; background: var(--g-green); color: #fff; display: grid; place-items: center; margin: 0 auto 18px; box-shadow: 0 14px 30px -12px rgba(46,158,104,.8); }
+  .done .tick svg.i { width: 36px; height: 36px; stroke-width: 2.4; }
+  .done h2 { font-size: 32px; font-weight: 900; text-transform: uppercase; }
+  .done p { color: var(--muted); max-width: 500px; margin: 10px auto 0; }
   .loading { color: var(--muted); padding: 12px 0; }
-  footer { background: var(--charcoal); color: var(--on-dark-muted); font-size: 13px; padding: 28px 0; }
+  footer { background: var(--night); color: var(--on-dark-muted); font-size: 13px; padding: 30px 0; }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
-  footer img { height: 24px; width: auto; display: block; }
+  footer img { height: 26px; width: auto; display: block; }
 </style>
 </head>
 <body>
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
+  <symbol id="i-beacon" viewBox="0 0 24 24"><path d="M4.9 19.1a10 10 0 0 1 0-14.2M7.8 16.2a6 6 0 0 1 0-8.4M16.2 7.8a6 6 0 0 1 0 8.4M19.1 4.9a10 10 0 0 1 0 14.2"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-funnel" viewBox="0 0 24 24"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2.1 6.3-6.3 2.1 2.1-6.3z"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.4 3.6a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+</svg>
+
+<div class="ribbon" role="note">
+  <div class="wrap">
+    <svg class="i"><use href="#i-zap"/></svg>
+    <span>Black Friday × Cyber Monday</span><span class="sep hide-sm">·</span>
+    <span class="hide-sm">Up to 3 months free</span><span class="sep hide-sm">·</span>
+    <span id="ribbonEnd">Ends Mon, Nov 30 · 11:59 PM PT</span>
+  </div>
+</div>
+
 <div class="top">
   <div class="wrap">
     <div class="bar">
       <img src="/brand/logo-on-dark.png" alt="FieldForge Partners" width="1200" height="210">
-      <span class="label" id="barEnd">Black Friday · Cyber Monday</span>
+      <a class="btn btn-green" href="#plans-h">See the deals <svg class="i"><use href="#i-arrow"/></svg></a>
     </div>
     <section class="hero">
-      <div class="label eyebrow" id="eyebrow">Black Friday · Cyber Monday</div>
-      <h1 id="headline">Up to 3 months free on FieldForge plans.</h1>
-      <p class="sub" id="lede">Pick a plan, see exactly what's in it, and tell us where to send the agreement. Two minutes. Nothing is charged until you sign.</p>
-      <div class="hero-cta">
-        <a class="btn btn-green" href="#plans-h">Choose your plan →</a>
-        <div class="countdown" id="countdown" aria-live="off"></div>
+      <div>
+        <span class="pill label" id="pill"><svg class="i"><use href="#i-tag"/></svg> This week only</span>
+        <h1 id="headline"><span>Black Friday</span><span class="x">×</span><span class="grad-text">Cyber Monday</span></h1>
+        <div class="deal-h" id="dealH">Up to <span class="t-green">3 months free</span> on <span class="t-purple">FieldForge plans.</span></div>
+        <p class="sub" id="lede">Pick a plan, see exactly what's in it, and tell us where to send the agreement. Two minutes. Nothing is charged until you sign.</p>
+        <div class="cd" id="countdown" aria-live="off"></div>
+        <div class="ctas">
+          <a class="btn btn-green" href="#plans-h">Choose your plan <svg class="i"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#detail">What's included</a>
+        </div>
       </div>
-      <div class="deals" id="deals"></div>
+      <div class="dealcard" id="dealcard">
+        <div class="seal" aria-hidden="true">
+          <svg class="ring" viewBox="0 0 132 132">
+            <defs><path id="circ" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs>
+            <text><textPath href="#circ" textLength="326" lengthAdjust="spacing">Black Friday · Cyber Monday · </textPath></text>
+          </svg>
+          <div class="core"><div><b>3</b><small>months<br>free</small></div></div>
+        </div>
+        <div class="label">The deals</div>
+        <h3>Pay for fewer months. Get the rest free.</h3>
+        <div id="dealRows"><div class="loading">Loading deals…</div></div>
+        <p class="note"><svg class="i"><use href="#i-info"/></svg><span>Free months come at the end of the paid term. Deal pricing is locked when you submit before the deadline.</span></p>
+      </div>
     </section>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div><svg class="i"><use href="#i-lock"/></svg><span><b>Nothing charged today</b>Agreement first, then ACH</span></div>
+    <div><svg class="i"><use href="#i-shield"/></svg><span><b>Guarantees in writing</b>Meeting targets on pipeline plans</span></div>
+    <div><svg class="i"><use href="#i-pen"/></svg><span><b>Agreement in 1 business day</b>Sent to the signer you name</span></div>
+    <div><svg class="i"><use href="#i-clock"/></svg><span><b>Two-minute sign-up</b>Company, address, signer</span></div>
   </div>
 </div>
 
 <main class="wrap">
   <div id="app">
     <section aria-labelledby="plans-h">
-      <div class="step-h"><span class="step-n">01</span><h2 id="plans-h">Choose your plan</h2></div>
-      <p class="lead">Deal pricing is applied automatically. Select a plan to see everything it includes.</p>
+      <div class="sec-h">
+        <div class="kicker">Step 1</div>
+        <h2 id="plans-h">Choose your <span class="t-purple">plan</span></h2>
+        <p>Deal pricing is applied automatically. Select a plan to see everything it includes.</p>
+      </div>
       <div class="plans" id="plans" role="radiogroup" aria-label="Plan"><div class="loading">Loading plans…</div></div>
       <div class="detail" id="detail" aria-live="polite"></div>
     </section>
 
     <section id="step2" aria-labelledby="co-h">
-      <div class="step-h"><span class="step-n">02</span><h2 id="co-h">Your company</h2></div>
-      <p class="lead">Where we send the service agreement and ACH details.</p>
+      <div class="sec-h">
+        <div class="kicker">Step 2</div>
+        <h2 id="co-h">Lock in your <span class="t-purple">pricing</span></h2>
+        <p>Tell us where to send the service agreement and ACH details.</p>
+      </div>
       <div class="grid">
         <form class="card" id="form" novalidate>
           <fieldset>
-            <legend class="label">Company</legend>
+            <legend><span class="ic"><svg class="i"><use href="#i-building"/></svg></span>Company</legend>
             <label class="f" data-f="companyName"><span>Company name</span><input type="text" name="companyName" autocomplete="organization" required><div class="ferr"></div></label>
             <label class="f" data-f="street"><span>Street address</span><input type="text" name="street" autocomplete="address-line1" required><div class="ferr"></div></label>
             <label class="f" data-f="street2"><span>Suite / unit <em>(optional)</em></span><input type="text" name="street2" autocomplete="address-line2"></label>
@@ -213,7 +376,7 @@
               </select><div class="ferr"></div></label>
           </fieldset>
           <fieldset>
-            <legend class="label">Who signs the agreement</legend>
+            <legend><span class="ic"><svg class="i"><use href="#i-user"/></svg></span>Who signs the agreement</legend>
             <label class="f" data-f="contactName"><span>Full name</span><input type="text" name="contactName" autocomplete="name" required><div class="ferr"></div></label>
             <div class="row">
               <label class="f" data-f="email"><span>Work email</span><input type="email" name="email" autocomplete="email" required><div class="ferr"></div></label>
@@ -225,6 +388,7 @@
           <label class="agree" data-f="agree"><input type="checkbox" name="agree"><span>I'm authorized to sign up this company. FieldForge will send a service agreement and ACH billing details to confirm. Nothing is charged until it's signed.</span></label>
           <button class="btn btn-green" type="submit" id="submit">Lock in my pricing</button>
           <div class="formerr" id="formerr" role="alert"></div>
+          <div class="secure"><svg class="i"><use href="#i-lock"/></svg>Your details go to FieldForge only. No card required.</div>
         </form>
         <aside class="card" id="summary" aria-live="polite"></aside>
       </div>
@@ -244,6 +408,9 @@
   const $ = (s, r = document) => r.querySelector(s);
   const usd = (n) => '$' + Number(n).toLocaleString('en-US');
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const icon = (id) => `<svg class="i"><use href="#i-${id}"/></svg>`;
+  const ICONS = { beacon: 'beacon', pipeline: 'funnel', fullbore: 'rocket', controlroom: 'compass' };
+  const KICKER = { beacon: 'Get found', pipeline: 'Lead flow', fullbore: 'Every channel', controlroom: 'Fractional CMO' };
   const state = { plans: [], selected: null, term: {}, promoActive: false, endsAt: null };
   const params = new URLSearchParams(location.search);
 
@@ -265,44 +432,49 @@
   }
 
   function renderHero() {
-    const end = state.endsAt.toLocaleString('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
-    if (state.promoActive) { $('#barEnd').textContent = `Ends ${end} PT`; return; }
-    $('#barEnd').textContent = 'Plans and pricing';
-    $('#eyebrow').textContent = 'Plans and pricing';
-    $('#headline').textContent = 'Sign up for FieldForge Partners.';
-    $('#lede').textContent = 'The Black Friday and Cyber Monday offer has ended. Standard pricing applies below.';
+    if (state.promoActive) return;
+    document.querySelector('.ribbon').style.display = 'none';
+    $('#dealcard').style.display = 'none';
+    $('#pill').innerHTML = `${icon('tag')} Plans and pricing`;
+    $('#headline').innerHTML = '<span>Sign up for</span><span class="grad-text">FieldForge</span>';
+    $('#dealH').textContent = 'The Black Friday and Cyber Monday offer has ended.';
+    $('#lede').textContent = 'Standard pricing applies below.';
   }
 
   function renderDeals() {
     const deals = state.plans.filter((p) => p.deal);
-    if (!state.promoActive || !deals.length) { $('#deals').style.display = 'none'; return; }
-    $('#deals').innerHTML = deals.map((p) => `<button type="button" class="deal-pick" data-plan="${p.id}">
-      <div class="label">${esc(p.name)}</div><div class="dh">${esc(p.deal.headline)}</div>
-      <div class="dv">${p.terms.length > 1 ? 'Worth up to' : 'Worth'} ${usd(p.deal.value)} →</div></button>`).join('');
-    $('#deals').addEventListener('click', (e) => {
+    $('#dealRows').innerHTML = deals.map((p) => `<button type="button" class="deal-row" data-plan="${p.id}">
+        <span class="ic">${icon(ICONS[p.id] || 'gift')}</span>
+        <span class="tx"><small>${esc(p.name)}</small><b>${esc(p.deal.headline)}</b></span>
+        <span class="val">${p.terms.length > 1 ? 'Up to ' : ''}${usd(p.deal.value)}<br>free ${icon('arrow')}</span>
+      </button>`).join('');
+    $('#dealRows').addEventListener('click', (e) => {
       const b = e.target.closest('[data-plan]'); if (!b) return;
       select(b.dataset.plan);
-      $('#plans-h').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      $('#plans-h').scrollIntoView({ block: 'start' });
     });
   }
 
   function renderPlans() {
     const most = state.plans.filter((p) => p.deal).sort((a, b) => b.deal.value - a.deal.value)[0];
-    $('#plans').innerHTML = state.plans.map((p) => {
+    $('#plans').innerHTML = state.plans.map((p, idx) => {
       const q = p.terms[0];
       const deal = p.deal
-        ? `<div class="deal"><b>${esc(p.deal.headline)}</b><span>${esc(p.deal.detail)}</span></div>`
-        : `<div class="deal none"><b>Standard pricing</b><span>${q.commitMonths}-month minimum</span></div>`;
+        ? `<div class="deal">${icon('gift')}<div><b>${esc(p.deal.headline)}</b><span>${esc(p.deal.detail)}</span></div></div>`
+        : `<div class="deal none">${icon('tag')}<div><b>Standard pricing</b><span>${q.commitMonths}-month minimum</span></div></div>`;
       return `<label class="plan" data-id="${p.id}">
-        ${most && most.id === p.id ? '<span class="badge">Most months free</span>' : ''}
         <input type="radio" name="plan" value="${p.id}">
-        <div class="name">${esc(p.name)}</div>
-        <div class="tag">${esc(p.tagline)}</div>
-        <div class="price">${usd(q.monthly)}<small>/mo</small></div>
-        <div class="setup">${q.setupList ? `+ ${usd(q.setupList)} one-time setup` : 'No setup fee'}</div>
-        ${deal}
-        <p class="summary">${esc(p.summary)}</p>
-        <div class="foot"><span class="guar">${esc(p.guarantee || 'Advisory, your team executes')}</span><span class="pick">Details ↓</span></div>
+        <div class="ph"><span class="label">0${idx + 1} · ${esc(KICKER[p.id] || p.tagline)}</span>${most && most.id === p.id ? '<span class="badge">Most free</span>' : ''}</div>
+        <div class="pb">
+          <div class="pi">${icon(ICONS[p.id] || 'tag')}</div>
+          <div class="name">${esc(p.name)}</div>
+          <div class="tag">${esc(p.tagline)}</div>
+          <div class="price">${usd(q.monthly)}<small>/mo</small></div>
+          <div class="setup">${q.setupList ? `+ ${usd(q.setupList)} one-time setup` : 'No setup fee'}</div>
+          ${deal}
+          <p class="summary">${esc(p.summary)}</p>
+          <div class="foot"><span class="guar">${icon('shield')}<span>${esc(p.guarantee || 'Advisory, your team executes')}</span></span><span class="pick"></span></div>
+        </div>
       </label>`;
     }).join('');
     $('#plans').addEventListener('change', (e) => { if (e.target.name === 'plan') select(e.target.value, true); });
@@ -311,7 +483,7 @@
   function select(id, fromCard) {
     state.selected = id;
     renderSelection();
-    if (fromCard && window.innerWidth < 1000) $('#detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (fromCard && window.innerWidth < 1040) $('#detail').scrollIntoView({ block: 'start' });
   }
 
   function renderSelection() {
@@ -319,12 +491,12 @@
       const on = el.dataset.id === state.selected;
       el.classList.toggle('selected', on);
       el.querySelector('input').checked = on;
-      el.querySelector('.pick').textContent = on ? 'Selected ✓' : 'Details ↓';
+      el.querySelector('.pick').innerHTML = on ? `Selected ${icon('check')}` : `Details ${icon('down')}`;
     });
     renderDetail(); renderSummary();
   }
 
-  function facts(p, q) {
+  function facts(q) {
     const li = (a, b, cls = '') => `<li class="${cls}"><span>${a}</span><span>${b}</span></li>`;
     let r = li('Monthly fee', usd(q.monthly) + '/mo');
     if (q.freeMonths) {
@@ -341,30 +513,35 @@
   function renderDetail() {
     const p = plan(); if (!p) return;
     const q = termFor(p);
-    const terms = p.terms.length > 1
-      ? `<div class="label">Choose your term</div><div class="terms" role="radiogroup" aria-label="Term">${p.terms.map((t) => `
-          <label class="term"><span class="tl"><input type="radio" name="term" value="${t.commitMonths}" ${t.commitMonths === q.commitMonths ? 'checked' : ''}>${esc(t.incentive.headline)}</span>
-          <span class="tv">${usd(t.totalSavings)} free</span></label>`).join('')}</div>`
-      : (q.incentive ? `<div class="label">The deal</div><h3>${esc(q.incentive.headline)}</h3>` : `<div class="label">Pricing</div><h3>Standard pricing</h3>`);
+    let deal;
+    if (p.terms.length > 1) {
+      deal = `<div class="label">Choose your term</div><div class="terms" role="radiogroup" aria-label="Term">${p.terms.map((t) => `
+        <label class="term"><span class="tl"><input type="radio" name="term" value="${t.commitMonths}" ${t.commitMonths === q.commitMonths ? 'checked' : ''}>${esc(t.incentive.headline)}</span>
+        <span class="tv">${usd(t.totalSavings)} free</span></label>`).join('')}</div>`;
+    } else if (q.incentive) {
+      deal = `<div class="label">The deal</div><div class="dealbig"><span class="ic">${icon('gift')}</span><b>${esc(q.incentive.headline)}</b></div>`;
+    } else {
+      deal = `<div class="label">Pricing</div><div class="dealbig" style="background:var(--gray)"><span class="ic" style="background:var(--charcoal)">${icon('tag')}</span><b>Standard pricing</b></div>`;
+    }
     const fine = [q.freeMonths ? 'Free months come at the end of the paid term.' : '', q.promoFinePrint || ''].filter(Boolean).join(' ');
     $('#detail').innerHTML = `
       <div class="inc-col">
         <div class="label">What's included</div>
         <h3>${esc(p.name)}: ${esc(p.tagline)}</h3>
         <ul class="inc">${(p.includes || []).map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
-        ${p.note ? `<p class="pnote">${esc(p.note)}</p>` : ''}
+        ${p.note ? `<p class="pnote">${icon('shield')}<span>${esc(p.note)}</span></p>` : ''}
       </div>
-      <div>
-        ${terms}
-        <ul class="facts">${facts(p, q)}</ul>
+      <div class="side">
+        ${deal}
+        <ul class="facts">${facts(q)}</ul>
         ${fine ? `<p class="fine">${esc(fine)}</p>` : ''}
-        <button type="button" class="btn btn-green" id="continue">Continue with ${esc(p.name)} →</button>
+        <button type="button" class="btn btn-green" id="continue">Continue with ${esc(p.name)} ${icon('arrow')}</button>
       </div>`;
     $('#detail').querySelectorAll('input[name=term]').forEach((i) => i.addEventListener('change', () => {
       state.term[p.id] = Number(i.value); renderDetail(); renderSummary();
     }));
     $('#continue').addEventListener('click', () => {
-      $('#step2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      $('#step2').scrollIntoView({ block: 'start' });
       setTimeout(() => $('#form').companyName.focus({ preventScroll: true }), 450);
     });
   }
@@ -373,21 +550,24 @@
     const p = plan(); if (!p) return;
     const q = termFor(p);
     const li = (a, b, cls = '') => `<li class="${cls}"><span>${a}</span><span>${b}</span></li>`;
-    $('#summary').innerHTML = `<div class="label" style="color:var(--muted)">Your selection</div>
-      <h3>${esc(p.name)}</h3><div class="tag">${esc(p.tagline)}</div>
-      ${q.incentive ? `<div class="deal-line">${esc(q.incentive.headline)}</div>` : ''}
-      <ul class="facts">${facts(p, q)}${li('First invoice', usd(q.firstInvoice), 'total')}</ul>
-      <p class="fine">Billed monthly in advance by ACH. ${q.promoApplied ? 'Deal pricing is locked when you submit before the deadline.' : ''}</p>`;
-    $('#submit').textContent = q.promoApplied ? `Lock in ${p.name} pricing` : `Sign up for ${p.name}`;
+    $('#summary').innerHTML = `<div class="ah"><span class="label">Your selection</span>${icon(ICONS[p.id] || 'tag')}</div>
+      <div class="ab">
+        <h3>${esc(p.name)}</h3><div class="tag">${esc(p.tagline)}</div>
+        ${q.incentive ? `<div class="deal-line">${icon('gift')}${esc(q.incentive.headline)}</div>` : ''}
+        <ul class="facts">${facts(q)}${li('First invoice', usd(q.firstInvoice), 'total')}</ul>
+        <p class="fine" style="margin:0">Billed monthly in advance by ACH. ${q.promoApplied ? 'Deal pricing is locked when you submit before the deadline.' : ''}</p>
+      </div>`;
+    $('#submit').innerHTML = `${icon('lock')} ${q.promoApplied ? `Lock in ${esc(p.name)} pricing` : `Sign up for ${esc(p.name)}`}`;
   }
 
   function tick() {
     if (!state.endsAt) return;
     const ms = state.endsAt - Date.now();
-    if (ms <= 0) { if (state.promoActive) location.reload(); $('#countdown').textContent = ''; return; }
+    if (ms <= 0) { if (state.promoActive) location.reload(); $('#countdown').innerHTML = ''; return; }
     const s = Math.floor(ms / 1000);
-    const d = Math.floor(s / 86400), h = Math.floor(s / 3600) % 24, m = Math.floor(s / 60) % 60;
-    $('#countdown').innerHTML = `Ends in <b>${d}d ${String(h).padStart(2, '0')}h ${String(m).padStart(2, '0')}m</b> · Mon, Nov 30, 11:59 PM PT`;
+    const u = [[Math.floor(s / 86400), 'days'], [Math.floor(s / 3600) % 24, 'hours'], [Math.floor(s / 60) % 60, 'min'], [s % 60, 'sec']];
+    $('#countdown').innerHTML = u.map(([v, l]) => `<div class="u"><b>${String(v).padStart(2, '0')}</b><small>${l}</small></div>`).join('')
+      + `<div class="end"><span>Ends</span><b>Mon, Nov 30</b><span>11:59 PM PT</span></div>`;
   }
 
   $('#form').addEventListener('submit', async (e) => {
@@ -406,7 +586,7 @@
     if (!body.agree) errs.agree = 'Required';
     if (Object.keys(errs).length) { showErrors(errs); return; }
 
-    const btn = $('#submit'); const label = btn.textContent;
+    const btn = $('#submit'); const label = btn.innerHTML;
     btn.disabled = true; btn.textContent = 'Submitting…';
     try {
       const r = await fetch('/api/signup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
@@ -415,7 +595,7 @@
       done(body, d.quote);
     } catch {
       $('#formerr').textContent = 'Network error. Check your connection and try again.';
-    } finally { btn.disabled = false; btn.textContent = label; }
+    } finally { btn.disabled = false; btn.innerHTML = label; }
   });
 
   function showErrors(fields) {
@@ -428,13 +608,13 @@
       first = first || wrap;
     }
     if (fields.agree) $('#formerr').textContent = 'Please tick the confirmation box.';
-    if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); const i = first.querySelector('input,select'); if (i) i.focus({ preventScroll: true }); }
+    if (first) { first.scrollIntoView({ block: 'center' }); const i = first.querySelector('input,select'); if (i) i.focus({ preventScroll: true }); }
   }
 
   function done(body, q) {
-    $('#app').innerHTML = `<div class="card done"><div class="tick">✓</div><h2>You're in, ${esc(body.contactName.split(' ')[0])}.</h2>
+    $('#app').innerHTML = `<div class="card done"><div class="tick">${icon('check')}</div><h2>You're in, ${esc(body.contactName.split(' ')[0])}.</h2>
       <p>${esc(body.companyName)} is signed up for <strong>${esc(q.planName)}</strong>${q.promoLabel ? ` (${esc(q.promoLabel.toLowerCase())})` : ''}. A confirmation is on its way to ${esc(body.email)}, and your agreement follows within one business day.</p></div>`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0 });
   }
 
   load();
