@@ -26,6 +26,9 @@ The free month comes at the **end** of the paid term, doesn't count toward the m
 
 ## Airtable
 
+Live setup: base **Revenue Systems Submissions - Website** (`appsmbcbhmqEJfMjO`), table **BFCM Plan Signups** (`tblKJobPkoXIaBSyl`).
+Set `AIRTABLE_BASE_ID=appsmbcbhmqEJfMjO` and `AIRTABLE_TABLE=tblKJobPkoXIaBSyl` in Vercel.
+
 Create a Personal Access Token with `data.records:write` scoped to your base(s).
 Every plan goes to `AIRTABLE_BASE_ID` / `AIRTABLE_TABLE` unless it has its own
 `AIRTABLE_BASE_ID_<PLAN>` / `AIRTABLE_TABLE_<PLAN>` (`BEACON`, `PIPELINE`, `FULLBORE`, `CONTROLROOM`).
