@@ -10,7 +10,7 @@ It's a static page plus two Vercel serverless functions, with no dependencies an
 
 | Plan | Deal | Value |
 |---|---|---|
-| Beacon | $1,000 off setup ($2,500 → $1,500) | $1,000 |
+| Beacon | Pay 3 months, month 4 free ($2,500 setup still applies) | $1,500 |
 | Pipeline Engine | Pay 6 months, month 7 free | $9,500 |
 | Full Bore | Pay 6 months, month 7 free | $16,500 |
 | Control Room | Standard pricing | — |

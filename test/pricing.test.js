@@ -8,7 +8,7 @@ assert.deepStrictEqual([q.commitMonths, q.freeMonths, q.totalMonths, q.totalSavi
 q = quote('fullbore', { now: before });
 assert.deepStrictEqual([q.commitMonths, q.freeMonths, q.totalSavings], [6, 1, 16500]);
 q = quote('beacon', { now: before });
-assert.deepStrictEqual([q.setup, q.totalSavings, q.firstInvoice, q.commitMonths], [1500, 1000, 3000, 3]);
+assert.deepStrictEqual([q.setup, q.commitMonths, q.freeMonths, q.totalMonths, q.totalSavings, q.firstInvoice, q.effectiveMonthly], [2500, 3, 1, 4, 1500, 4000, 1125]);
 q = quote('controlroom', { now: before });
 assert.deepStrictEqual([q.promoApplied, q.totalSavings, q.commitMonths], [false, 0, 3]);
 
