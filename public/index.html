@@ -241,7 +241,34 @@
   .agree input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--green-dark); flex: none; }
   .agree.invalid span { color: var(--err); }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  #submit { width: 100%; padding: 19px; font-size: 16px; }
+  #submit, #next { width: 100%; padding: 19px; font-size: 16px; }
+  .stepbar { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 18px 0 8px; }
+  .stepbar span { height: 4px; border-radius: 2px; background: var(--line); }
+  .stepbar span.on { background: var(--g-green); }
+  .stepnote { text-align: center; font: 700 11px/1.4 var(--m); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  dialog#signer { width: min(580px, calc(100vw - 32px)); max-height: calc(100vh - 32px); border: 0; border-radius: 16px; padding: 0; color: var(--ink); background: #fff; box-shadow: 0 40px 80px -30px rgba(0,0,0,.55); overflow: auto; }
+  dialog#signer::backdrop { background: rgba(17,24,25,.62); backdrop-filter: blur(3px); }
+  dialog#signer[open] { animation: pop .22s ease-out; }
+  @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+  @media (prefers-reduced-motion: reduce) { dialog#signer[open] { animation: none; } }
+  .dlg-h { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; color: #fff; padding: 18px 22px; background: radial-gradient(260px 140px at 100% 0%, rgba(124,58,237,.45), transparent 70%), var(--night); }
+  .dlg-h .label { color: var(--green); }
+  .dlg-h h3 { display: flex; align-items: center; gap: 10px; font-size: 21px; font-weight: 800; margin-top: 4px; }
+  .dlg-h h3 svg.i { color: var(--green); }
+  .dlg-x { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: #fff; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; cursor: pointer; flex: none; }
+  .dlg-x:hover { background: rgba(255,255,255,.16); }
+  .dlg-b { padding: 22px; }
+  .recap { display: flex; gap: 12px; align-items: center; background: var(--gray); border-radius: var(--r); padding: 12px 14px; margin-bottom: 18px; font-size: 14px; }
+  .recap .ic { width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; background: var(--g-green); color: #fff; flex: none; }
+  .recap .ic svg.i { width: 18px; height: 18px; }
+  .recap .rt { flex: 1; min-width: 0; }
+  .recap .rt b { display: block; font: 700 15px/1.3 var(--h); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .recap .rt span { color: var(--muted); font-size: 13px; }
+  .recap button { background: none; border: 0; color: var(--purple); font: 700 12px var(--m); letter-spacing: .05em; text-transform: uppercase; cursor: pointer; padding: 6px; }
+  @media (max-width: 560px) {
+    dialog#signer { width: 100vw; max-width: 100vw; max-height: 92vh; margin: auto 0 0; border-radius: 18px 18px 0 0; }
+    @keyframes pop { from { transform: translateY(40px); opacity: 0; } }
+  }
   .formerr { color: var(--err); font-size: 14px; margin-top: 12px; }
   aside.card { position: sticky; top: 16px; padding: 0; overflow: hidden; }
   aside .ah { background: var(--night); color: #fff; padding: 14px 22px; display: flex; justify-content: space-between; align-items: center; }
@@ -288,6 +315,7 @@
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
 </svg>
 
@@ -360,7 +388,7 @@
       <div class="sec-h">
         <div class="kicker">Step 2</div>
         <h2 id="co-h">Lock in your <span class="t-purple">pricing</span></h2>
-        <p>Tell us where to send the service agreement and ACH details.</p>
+        <p>Company details first, then who signs. We send the service agreement and ACH details to the signer.</p>
       </div>
       <div class="grid">
         <form class="card" id="form" novalidate>
@@ -379,20 +407,30 @@
                 <option>United States</option><option>Canada</option><option>United Kingdom</option><option>Other</option>
               </select><div class="ferr"></div></label>
           </fieldset>
-          <fieldset>
-            <legend><span class="ic"><svg class="i"><use href="#i-user"/></svg></span>Who signs the agreement</legend>
-            <label class="f" data-f="contactName"><span>Full name</span><input type="text" name="contactName" autocomplete="name" required><div class="ferr"></div></label>
-            <div class="row">
-              <label class="f" data-f="email"><span>Work email</span><input type="email" name="email" autocomplete="email" required><div class="ferr"></div></label>
-              <label class="f" data-f="phone"><span>Phone <em>(optional)</em></span><input type="tel" name="phone" autocomplete="tel"></label>
-            </div>
-            <label class="f" data-f="notes"><span>Anything we should know? <em>(optional)</em></span><textarea name="notes" maxlength="2000"></textarea></label>
-          </fieldset>
           <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-          <label class="agree" data-f="agree"><input type="checkbox" name="agree"><span>I'm authorized to sign up this company. FieldForge will send a service agreement and ACH billing details to confirm. Nothing is charged until it's signed.</span></label>
-          <button class="btn btn-green" type="submit" id="submit">Lock in my pricing</button>
-          <div class="formerr" id="formerr" role="alert"></div>
-          <div class="secure"><svg class="i"><use href="#i-lock"/></svg>Your details go to FieldForge only. No card required.</div>
+          <button class="btn btn-green" type="button" id="next">Next: who signs the agreement <svg class="i"><use href="#i-arrow"/></svg></button>
+          <div class="stepbar" aria-hidden="true"><span class="on"></span><span></span></div>
+          <p class="stepnote">Step 1 of 2 · Company details</p>
+
+          <dialog id="signer" aria-labelledby="signer-h">
+            <div class="dlg-h">
+              <div><div class="label">Step 2 of 2</div><h3 id="signer-h"><svg class="i"><use href="#i-user"/></svg>Who signs the agreement</h3></div>
+              <button type="button" class="dlg-x" id="dlgClose" aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+            </div>
+            <div class="dlg-b">
+              <div class="recap" id="recap"></div>
+              <label class="f" data-f="contactName"><span>Full name</span><input type="text" name="contactName" autocomplete="name" required autofocus><div class="ferr"></div></label>
+              <div class="row">
+                <label class="f" data-f="email"><span>Work email</span><input type="email" name="email" autocomplete="email" required><div class="ferr"></div></label>
+                <label class="f" data-f="phone"><span>Phone <em>(optional)</em></span><input type="tel" name="phone" autocomplete="tel"></label>
+              </div>
+              <label class="f" data-f="notes"><span>Anything we should know? <em>(optional)</em></span><textarea name="notes" maxlength="2000"></textarea></label>
+              <label class="agree" data-f="agree"><input type="checkbox" name="agree"><span>I'm authorized to sign up this company. FieldForge will send a service agreement and ACH billing details to confirm. Nothing is charged until it's signed.</span></label>
+              <button class="btn btn-green" type="submit" id="submit">Lock in my pricing</button>
+              <div class="formerr" id="formerr" role="alert"></div>
+              <div class="secure"><svg class="i"><use href="#i-lock"/></svg>Your details go to FieldForge only. No card required.</div>
+            </div>
+          </dialog>
         </form>
         <aside class="card" id="summary" aria-live="polite"></aside>
       </div>
@@ -581,9 +619,37 @@
       + `<div class="end"><span>Ends</span><b>Mon, Nov 30</b><span>11:59 PM PT</span></div>`;
   }
 
-  $('#form').addEventListener('submit', async (e) => {
+  const COMPANY = ['companyName', 'street', 'city', 'region', 'postalCode', 'country'];
+  const dlg = $('#signer');
+  const form = $('#form');
+  const val = (k) => String((form.elements[k] && form.elements[k].value) || '').trim();
+
+  function openSigner() {
+    form.querySelectorAll('.invalid').forEach((n) => n.classList.remove('invalid'));
+    const errs = {};
+    COMPANY.forEach((k) => { if (!val(k)) errs[k] = 'Required'; });
+    if (Object.keys(errs).length) { showErrors(errs); return; }
+    const p = plan(); const q = termFor(p);
+    $('#recap').innerHTML = `<span class="ic">${icon('building')}</span>
+      <span class="rt"><b>${esc(val('companyName'))}</b><span>${esc(val('city'))}, ${esc(val('region'))} · ${esc(p.name)}${q.incentive ? `, ${esc(q.incentive.headline.toLowerCase())}` : ''}</span></span>
+      <button type="button" id="recapEdit">Edit</button>`;
+    $('#recapEdit').addEventListener('click', () => { dlg.close(); form.companyName.focus(); });
+    $('#formerr').textContent = '';
+    dlg.showModal();
+    setTimeout(() => form.contactName.focus(), 30);
+  }
+  $('#next').addEventListener('click', openSigner);
+  // Clear a field's error as soon as it's corrected.
+  form.addEventListener('input', (e) => { const w = e.target.closest('[data-f]'); if (w) w.classList.remove('invalid'); });
+  form.addEventListener('change', (e) => { const w = e.target.closest('[data-f]'); if (w) w.classList.remove('invalid'); });
+  $('#dlgClose').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); }); // click on backdrop
+  // Enter in a company field moves to the next step instead of submitting.
+  COMPANY.forEach((k) => form.elements[k].addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); openSigner(); } }));
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const form = e.target;
+    if (!dlg.open) { openSigner(); return; }
     form.querySelectorAll('.invalid').forEach((n) => n.classList.remove('invalid'));
     $('#formerr').textContent = '';
     const body = Object.fromEntries([...new FormData(form).entries()].filter(([k]) => k !== 'agree'));
@@ -592,7 +658,7 @@
     body.term = termFor(plan()).commitMonths;
 
     const errs = {};
-    ['companyName', 'street', 'city', 'region', 'postalCode', 'contactName', 'email'].forEach((k) => { if (!String(body[k] || '').trim()) errs[k] = 'Required'; });
+    [...COMPANY, 'contactName', 'email'].forEach((k) => { if (!String(body[k] || '').trim()) errs[k] = 'Required'; });
     if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(body.email.trim())) errs.email = 'Enter a valid email address';
     if (!body.agree) errs.agree = 'Required';
     if (Object.keys(errs).length) { showErrors(errs); return; }
@@ -603,6 +669,7 @@
       const r = await fetch('/api/signup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) { if (d.fields) showErrors(d.fields); $('#formerr').textContent = d.error || 'Something went wrong. Please try again.'; return; }
+      dlg.close();
       done(body, d.quote);
     } catch {
       $('#formerr').textContent = 'Network error. Check your connection and try again.';
@@ -610,6 +677,7 @@
   });
 
   function showErrors(fields) {
+    if (dlg.open && Object.keys(fields).some((k) => COMPANY.includes(k))) dlg.close();
     let first = null;
     for (const [k, msg] of Object.entries(fields)) {
       const wrap = document.querySelector(`[data-f="${k}"]`);
