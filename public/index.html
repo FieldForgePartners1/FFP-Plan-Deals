@@ -311,7 +311,8 @@
     }
     const s = Math.floor(ms / 1000);
     const parts = [[Math.floor(s / 86400), 'days'], [Math.floor(s / 3600) % 24, 'hours'], [Math.floor(s / 60) % 60, 'min'], [s % 60, 'sec']];
-    const end = state.endsAt.toLocaleString(undefined, { weekday: 'long', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    // Always show the deadline in Pacific time, so every visitor reads "Monday 11:59 PM".
+    const end = state.endsAt.toLocaleString('en-US', { timeZone: 'America/Los_Angeles', weekday: 'long', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
     el.innerHTML = parts.map(([v, l]) => `<div class="cd-box"><b>${String(v).padStart(2, '0')}</b><small>${l}</small></div>`).join('') + `<div class="cd-note">Ends ${esc(end)}</div>`;
   }
 
