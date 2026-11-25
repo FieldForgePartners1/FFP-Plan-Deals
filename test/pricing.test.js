@@ -6,24 +6,25 @@ const pick = (q) => [q.commitMonths, q.freeMonths, q.totalMonths, q.totalSavings
 
 // Beacon: pay 3, get 4 (setup fee still applies)
 assert.deepStrictEqual(pick(quote('beacon', { now: before })), [3, 1, 4, 1500, 4000, 7000]);
-assert.strictEqual(quote('beacon', { now: before, paidMonths: 9 }).commitMonths, 3); // no 9-month option
+assert.strictEqual(quote('beacon', { now: before, paidMonths: 6 }).commitMonths, 3); // no 6-month option
 
-// Pipeline Engine: pay 5, get 6
-assert.deepStrictEqual(pick(quote('pipeline', { now: before })), [5, 1, 6, 9500, 9500, 47500]);
-assert.strictEqual(quote('pipeline', { now: before }).promoLabel, 'Pay for 5 months, month 6 free');
+// Pipeline Engine: pay 4 get 5 (default), or pay 6 get 8
+assert.deepStrictEqual(pick(quote('pipeline', { now: before })), [4, 1, 5, 9500, 9500, 38000]);
+assert.deepStrictEqual(pick(quote('pipeline', { now: before, paidMonths: '6' })), [6, 2, 8, 19000, 9500, 57000]);
+assert.deepStrictEqual(pick(quote('pipeline', { now: before, paidMonths: 5 })), [4, 1, 5, 9500, 9500, 38000]); // retired term -> default
+assert.deepStrictEqual(bestDeal('pipeline', before), { headline: 'Up to 2 months free', detail: 'Pay 4, get 5 · Pay 6, get 8', value: 19000 });
 
-// Full Bore: pay 6 get 8, or pay 9 get 12
+// Full Bore: pay 6 get 8 only; the 9-month option is gone
 assert.deepStrictEqual(pick(quote('fullbore', { now: before })), [6, 2, 8, 33000, 16500, 99000]);
-assert.deepStrictEqual(pick(quote('fullbore', { now: before, paidMonths: '9' })), [9, 3, 12, 49500, 16500, 148500]);
-assert.deepStrictEqual(pick(quote('fullbore', { now: before, paidMonths: 7 })), [6, 2, 8, 33000, 16500, 99000]); // unknown -> default
-assert.strictEqual(quote('fullbore', { now: before, paidMonths: 9 }).promoLabel, 'Pay for 9 months, months 10, 11 and 12 free');
-assert.deepStrictEqual(bestDeal('fullbore', before), { headline: 'Up to 3 months free', detail: 'Pay 6, get 8 · Pay 9, get 12', value: 49500 });
+assert.deepStrictEqual(pick(quote('fullbore', { now: before, paidMonths: 9 })), [6, 2, 8, 33000, 16500, 99000]);
+assert.strictEqual(quote('fullbore', { now: before }).promoLabel, 'Pay for 6 months, months 7 and 8 free');
+assert.strictEqual(bestDeal('fullbore', before).value, 33000);
 assert.match(quote('fullbore', { now: before }).promoFinePrint, /Ad spend is still paid/);
 
 assert.strictEqual(quote('controlroom', { now: before }).promoApplied, false);
 assert.strictEqual(quote('crew'), null);
 
 // After the deadline: list pricing and standard minimum terms; a requested term is ignored.
-assert.deepStrictEqual(pick(quote('fullbore', { now: after, paidMonths: 9 })), [4, 0, 4, 0, 16500, 66000]);
+assert.deepStrictEqual(pick(quote('pipeline', { now: after, paidMonths: 6 })), [4, 0, 4, 0, 9500, 38000]);
 assert.strictEqual(bestDeal('pipeline', after), null);
 console.log('pricing tests passed');

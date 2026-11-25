@@ -11,8 +11,8 @@ It's a static page plus two Vercel serverless functions, with no dependencies an
 | Plan | Deal | Value |
 |---|---|---|
 | Beacon | Pay 3 months, month 4 free ($2,500 setup still applies) | $1,500 |
-| Pipeline Engine | Pay 5 months, month 6 free | $9,500 |
-| Full Bore | Pay 6 get 8 ($33,000) or pay 9 get 12 ($49,500), buyer chooses | up to $49,500 |
+| Pipeline Engine | Pay 4 get 5 ($9,500) or pay 6 get 8 ($19,000), buyer chooses | up to $19,000 |
+| Full Bore | Pay 6 months, months 7 and 8 free | $33,000 |
 | Control Room | Standard pricing | — |
 
 The free month comes at the **end** of the paid term, doesn't count toward the meeting guarantee or its free extension, and Full Bore ad spend is still paid by the client in that month. The deal ends **Mon Nov 30 2026, 11:59:59 PM Pacific**
