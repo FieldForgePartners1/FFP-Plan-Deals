@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
   if (body.agree !== true) errors.agree = 'Please confirm to continue';
 
   // Price is decided here, at submission time, never by the browser.
-  const q = quote(String(body.plan || ''));
+  const q = quote(String(body.plan || ''), { paidMonths: body.term });
   if (!q) errors.plan = 'Choose a plan';
   if (Object.keys(errors).length) return res.status(400).json({ error: 'Please fix the highlighted fields', fields: errors });
 

@@ -1,20 +1,26 @@
-const { PLANS, quote, incentive, promoActive, promoEndsAt, promoLabel } = require('../lib/pricing');
+const { PLANS, quote, incentive, bestDeal, promoActive, promoEndsAt } = require('../lib/pricing');
 
 // GET /api/plans: what the page renders. Prices come from the server so the page and
 // the stored record can never disagree.
 module.exports = (req, res) => {
   const now = new Date();
-  const plans = Object.values(PLANS).map((p) => ({
-    id: p.id,
-    name: p.name,
-    tagline: p.tagline,
-    summary: p.summary,
-    guarantee: p.guarantee,
-    includes: p.includes,
-    note: p.note,
-    promoLabel: promoLabel(p),
-    quote: quote(p.id, { now }),
-  })).map((p) => ({ ...p, incentive: incentive(p.quote) }));
+  const live = promoActive(now);
+  const plans = Object.values(PLANS).map((p) => {
+    const terms = live && p.promo
+      ? p.promo.options.map((o) => quote(p.id, { now, paidMonths: o.paid }))
+      : [quote(p.id, { now })];
+    return {
+      id: p.id,
+      name: p.name,
+      tagline: p.tagline,
+      summary: p.summary,
+      guarantee: p.guarantee,
+      includes: p.includes,
+      note: p.note,
+      deal: bestDeal(p.id, now),
+      terms: terms.map((q) => ({ ...q, incentive: incentive(q) })),
+    };
+  });
   res.setHeader('Cache-Control', 'no-store');
-  res.status(200).json({ promoActive: promoActive(now), promoEndsAt: promoEndsAt().toISOString(), plans });
+  res.status(200).json({ promoActive: live, promoEndsAt: promoEndsAt().toISOString(), plans });
 };
