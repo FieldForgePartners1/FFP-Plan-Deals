@@ -1,0 +1,8 @@
+{
+  "name": "fieldforge-bfcm-signup",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Black Friday / Cyber Monday sign-up page for FieldForge Partners plans",
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node test/pricing.test.js" }
+}
